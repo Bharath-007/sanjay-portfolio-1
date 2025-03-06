@@ -128,7 +128,7 @@ export default function Hero() {
               <Mail className="w-5 h-5 mr-2" />
               Contact Me
             </motion.a>
-            <motion.a
+            {/* <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="/sanjay-portfolio-1/ShriSanjayResume.pdf"
@@ -136,7 +136,23 @@ export default function Hero() {
             >
               <Download className="w-5 h-5 mr-2" />
               Download CV
-            </motion.a>
+            </motion.a> */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "/sanjay-portfolio-1/ShriSanjayResume.pdf"; // File URL
+                link.download = "ShriSanjayResume.pdf"; // Suggested file name
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              className="flex items-center px-6 py-3 bg-white text-blue-900 rounded-full hover:bg-gray-100 transition-colors"
+            >
+              <Download className="w-5 h-5 mr-2" />
+              Download CV
+            </motion.button>
           </div>
 
           <div className="flex justify-center space-x-4 mt-8">
