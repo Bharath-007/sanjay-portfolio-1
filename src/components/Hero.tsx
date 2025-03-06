@@ -1,12 +1,12 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { RocketIcon, Mail, Linkedin, Download } from 'lucide-react';
-import { useSpring, animated } from '@react-spring/web';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { RocketIcon, Mail, Linkedin, Download } from "lucide-react";
+import { useSpring, animated } from "@react-spring/web";
 
 const planets = [
-  { name: 'mercury', size: '30px', orbit: '150px', speed: 20 },
-  { name: 'venus', size: '40px', orbit: '200px', speed: 25 },
-  { name: 'earth', size: '45px', orbit: '250px', speed: 30 },
-  { name: 'mars', size: '35px', orbit: '300px', speed: 35 }
+  { name: "mercury", size: "30px", orbit: "150px", speed: 20 },
+  { name: "venus", size: "40px", orbit: "200px", speed: 25 },
+  { name: "earth", size: "45px", orbit: "250px", speed: 30 },
+  { name: "mars", size: "35px", orbit: "300px", speed: 35 },
 ];
 
 function Planet({ size, orbit, speed, delay = 0 }) {
@@ -15,7 +15,7 @@ function Planet({ size, orbit, speed, delay = 0 }) {
     from: { rotateZ: 0 },
     to: { rotateZ: 360 },
     config: { duration: speed * 1000 },
-    delay
+    delay,
   });
 
   return (
@@ -24,20 +24,21 @@ function Planet({ size, orbit, speed, delay = 0 }) {
         ...styles,
         width: orbit,
         height: orbit,
-        position: 'absolute',
-        borderRadius: '50%',
-        border: '1px solid rgba(255,255,255,0.1)'
+        position: "absolute",
+        borderRadius: "50%",
+        border: "1px solid rgba(255,255,255,0.1)",
       }}
     >
       <div
         style={{
           width: size,
           height: size,
-          borderRadius: '50%',
-          position: 'absolute',
+          borderRadius: "50%",
+          position: "absolute",
           top: 0,
           transform: `translateX(-50%)`,
-          background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(255,255,255,0.2))'
+          background:
+            "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(255,255,255,0.2))",
         }}
       />
     </animated.div>
@@ -50,9 +51,9 @@ function FlyingRover() {
     from: { translateY: 0, rotateZ: -5 },
     to: [
       { translateY: -20, rotateZ: 5 },
-      { translateY: 0, rotateZ: -5 }
+      { translateY: 0, rotateZ: -5 },
     ],
-    config: { duration: 2000 }
+    config: { duration: 2000 },
   });
 
   return (
@@ -62,7 +63,9 @@ function FlyingRover() {
           <RocketIcon className="w-8 h-8 text-blue-500" />
           <div>
             <p className="text-white text-sm">Need help navigating?</p>
-            <button className="text-blue-400 text-xs hover:text-blue-300">Click me!</button>
+            <button className="text-blue-400 text-xs hover:text-blue-300">
+              Click me!
+            </button>
           </div>
         </div>
       </div>
@@ -72,15 +75,18 @@ function FlyingRover() {
 
 export default function Hero() {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a1f]" id="home">
+    <div
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a1f]"
+      id="home"
+    >
       {/* Animated background with stars and nebula */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1539321908154-04927596764d')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a1f]/50 to-[#0a0a1f]" />
-        
+
         {/* Rotating planets */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           {planets.map((planet, index) => (
@@ -94,7 +100,7 @@ export default function Hero() {
           ))}
         </div>
       </div>
-      
+
       <motion.div style={{ y }} className="relative z-10 text-center px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -111,7 +117,7 @@ export default function Hero() {
             <br />
             Mechanical Engineering | Aerospace Enthusiast
           </p>
-          
+
           <div className="flex justify-center space-x-4 mt-8">
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -125,14 +131,14 @@ export default function Hero() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/resume.pdf"
+              href="/ShriSanjayResume.pdf"
               className="flex items-center px-6 py-3 bg-white text-blue-900 rounded-full hover:bg-gray-100 transition-colors"
             >
               <Download className="w-5 h-5 mr-2" />
               Download CV
             </motion.a>
           </div>
-          
+
           <div className="flex justify-center space-x-4 mt-8">
             <motion.a
               whileHover={{ scale: 1.1 }}
