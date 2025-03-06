@@ -104,7 +104,7 @@ export default function Hero() {
         >
           <RocketIcon className="w-16 h-16 mx-auto text-blue-500 animate-pulse" />
           <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight">
-            SHRI SANJAY I S
+            SHRI SANJAY
           </h1>
           <p className="text-xl md:text-2xl text-blue-200 max-w-3xl mx-auto">
             Research Trainee at AeroinSpacetech | PSG TECH - UG 2nd Year

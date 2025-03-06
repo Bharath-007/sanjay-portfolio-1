@@ -44,7 +44,7 @@ export default function Navbar() {
               className="flex items-center space-x-2"
             >
               <Rocket className="w-6 h-6 text-blue-500" />
-              <span className="text-white font-bold">Sanjay I S</span>
+              <span className="text-white font-bold">Sanjay's Portfolio</span>
             </motion.div>
             <div className="flex space-x-8">
               {navItems.map((item) => (
